@@ -1,24 +1,31 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "no-peaceful",
   "version": "${version}",
-  "name": "",
-  "description": "",
+  "name": "No Peaceful",
+  "description": "Reverts difficulty change if set to peaceful",
   "authors": [
     "tildejustin"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/modid",
-    "sources": "https://github.com/tildejustin/modid",
-    "issues": "https://github.com/tildejustin/modid/issues"
+    "homepage": "https://github.com/tildejustin/no-peaceful",
+    "sources": "https://github.com/tildejustin/no-peaceful",
+    "issues": "https://github.com/tildejustin/no-peaceful/issues"
   },
   "license": "MPL-2.0",
-  "environment": "*",
+  "environment": "client",
   "mixins": [
-    "modid.mixins.json"
+    "no-peaceful.mixins.json"
   ],
   "depends": {
-    "minecraft": "*",
+    "minecraft": "1.16.1",
     "fabricloader": ">=0.15.0"
+  },
+  "custom": {
+    "loom:injected_interfaces": {
+      "net/minecraft/class_31": [
+        "dev/tildejustin/no_peaceful/LevelPropertiesInterface"
+      ]
+    }
   }
 }
