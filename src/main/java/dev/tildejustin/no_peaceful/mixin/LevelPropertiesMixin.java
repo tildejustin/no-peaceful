@@ -21,6 +21,7 @@ public class LevelPropertiesMixin implements LevelPropertiesInterface {
     @Inject(method = "setDifficulty", at = @At("TAIL"))
     private void updatePeacefulAllowed(Difficulty difficulty, CallbackInfo ci) {
         if (difficulty == Difficulty.PEACEFUL) {
+            System.out.println("Changed difficulty to peaceful");
             this.peacefulAllowed = true;
         }
     }
